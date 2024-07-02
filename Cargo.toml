@@ -23,7 +23,7 @@ members = [
 ]
 
 [workspace.package]
-version = "0.7.4"
+version = "0.7.4-5fec648d"
 license = "MIT OR Apache-2.0"
 edition = "2021"
 repository = "https://github.com/launchbadge/sqlx"
@@ -37,7 +37,7 @@ authors = [
 ]
 
 [package]
-name = "sqlx"
+name = "sqlx-etorreborre"
 readme = "README.md"
 documentation = "https://docs.rs/sqlx"
 description = "🧰 The Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports PostgreSQL, MySQL, and SQLite."
