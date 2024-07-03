@@ -27,7 +27,7 @@
 #![allow(unsafe_code)]
 
 #[macro_use]
-extern crate sqlx_core;
+extern crate sqlx_etorreborre_core as sqlx_core;
 
 use std::sync::atomic::AtomicBool;
 

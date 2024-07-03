@@ -38,12 +38,12 @@ pub use sqlx_mysql::{self as mysql, MySql, MySqlConnection, MySqlExecutor, MySql
 #[cfg(feature = "postgres")]
 #[cfg_attr(docsrs, doc(cfg(feature = "postgres")))]
 #[doc(inline)]
-pub use sqlx_postgres::{self as postgres, PgConnection, PgExecutor, PgPool, Postgres};
+pub use sqlx_etorreborre_postgres::{self as postgres, PgConnection, PgExecutor, PgPool, Postgres};
 
 #[cfg(feature = "sqlite")]
 #[cfg_attr(docsrs, doc(cfg(feature = "sqlite")))]
 #[doc(inline)]
-pub use sqlx_sqlite::{self as sqlite, Sqlite, SqliteConnection, SqliteExecutor, SqlitePool};
+pub use sqlx_etorreborre_sqlite::{self as sqlite, Sqlite, SqliteConnection, SqliteExecutor, SqlitePool};
 
 #[cfg(feature = "any")]
 #[cfg_attr(docsrs, doc(cfg(feature = "any")))]
@@ -151,3 +151,8 @@ pub mod prelude {
     pub use super::Statement;
     pub use super::Type;
 }
+
+#[cfg(feature = "postgres")]
+extern crate sqlx_etorreborre_postgres as sqlx_postgres;
+
+extern crate sqlx_etorreborre_core as sqlx_core;

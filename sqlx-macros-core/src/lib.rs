@@ -73,3 +73,11 @@ where
     #[cfg(not(any(feature = "_rt-async-std", feature = "tokio")))]
     sqlx_core::rt::missing_rt(f)
 }
+
+#[cfg(feature = "postgres")]
+extern crate sqlx_etorreborre_postgres as sqlx_postgres;
+
+#[cfg(feature = "sqlite")]
+extern crate sqlx_etorreborre_sqlite as sqlx_sqlite;
+
+extern crate sqlx_etorreborre_core as sqlx_core;

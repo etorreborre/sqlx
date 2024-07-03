@@ -10,13 +10,13 @@ repository.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-json = ["sqlx-core/json", "serde"]
-any = ["sqlx-core/any"]
-offline = ["sqlx-core/offline", "serde/derive"]
-migrate = ["sqlx-core/migrate"]
+json = ["sqlx-etorreborre-core/json", "serde"]
+any = ["sqlx-etorreborre-core/any"]
+offline = ["sqlx-etorreborre-core/offline", "serde/derive"]
+migrate = ["sqlx-etorreborre-core/migrate"]
 
 [dependencies]
-sqlx-core = { workspace = true }
+sqlx-etorreborre-core = { workspace = true }
 
 # Futures crates
 futures-channel = { version = "0.3.19", default-features = false, features = ["sink", "alloc", "std"] }

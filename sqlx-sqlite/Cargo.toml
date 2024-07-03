@@ -1,5 +1,5 @@
 [package]
-name = "sqlx-sqlite"
+name = "sqlx-etorreborre-sqlite"
 documentation = "https://docs.rs/sqlx"
 description = "SQLite driver implementation for SQLx. Not for direct use; see the `sqlx` crate for details."
 version.workspace = true
@@ -11,10 +11,10 @@ repository.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-any = ["sqlx-core/any"]
-json = ["sqlx-core/json", "serde"]
-offline = ["sqlx-core/offline", "serde"]
-migrate = ["sqlx-core/migrate"]
+any = ["sqlx-etorreborre-core/any"]
+json = ["sqlx-etorreborre-core/json", "serde"]
+offline = ["sqlx-etorreborre-core/offline", "serde"]
+migrate = ["sqlx-etorreborre-core/migrate"]
 
 chrono = ["dep:chrono"]
 regexp = ["dep:regex"]
@@ -55,8 +55,8 @@ features = [
     "unlock_notify"
 ]
 
-[dependencies.sqlx-core]
+[dependencies.sqlx-etorreborre-core]
 workspace = true
 
 [dev-dependencies]
-sqlx = { workspace = true, default-features = false, features = ["macros", "runtime-tokio", "tls-none"] }
+sqlx-etorreborre = { workspace = true, default-features = false, features = ["macros", "runtime-tokio", "tls-none"] }

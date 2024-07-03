@@ -16,7 +16,7 @@ use sqlx_core::executor::Executor;
 use sqlx_core::ext::ustr::UStr;
 use sqlx_core::transaction::TransactionManager;
 
-sqlx_core::declare_driver_with_optional_migrate!(DRIVER = Postgres);
+sqlx_etorreborre_core::declare_driver_with_optional_migrate!(DRIVER = Postgres);
 
 impl AnyConnectionBackend for PgConnection {
     fn name(&self) -> &str {

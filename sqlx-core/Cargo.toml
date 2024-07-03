@@ -1,5 +1,5 @@
 [package]
-name = "sqlx-core"
+name = "sqlx-etorreborre-core"
 description = "Core of SQLx, the rust SQL toolkit. Not intended to be used directly."
 version.workspace = true
 license.workspace = true
@@ -90,5 +90,5 @@ indexmap = "2.0"
 event-listener = "2.5.2"
 
 [dev-dependencies]
-sqlx = { workspace = true, features = ["postgres", "sqlite", "mysql", "migrate", "macros", "time", "uuid"] }
+sqlx-etorreborre = { workspace = true, features = ["postgres", "sqlite", "mysql", "migrate", "macros", "time", "uuid"] }
 tokio = { version = "1", features = ["rt"] }

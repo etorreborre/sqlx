@@ -1,5 +1,5 @@
 [package]
-name = "sqlx-postgres"
+name = "sqlx-etorreborre-postgres"
 documentation = "https://docs.rs/sqlx"
 description = "PostgreSQL driver implementation for SQLx. Not for direct use; see the `sqlx` crate for details."
 version.workspace = true
@@ -10,10 +10,10 @@ repository.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-any = ["sqlx-core/any"]
-json = ["sqlx-core/json"]
-migrate = ["sqlx-core/migrate"]
-offline = ["sqlx-core/offline"]
+any = ["sqlx-etorreborre-core/any"]
+json = ["sqlx-etorreborre-core/json"]
+migrate = ["sqlx-etorreborre-core/migrate"]
+offline = ["sqlx-etorreborre-core/offline"]
 
 # Type integration features which require additional dependencies
 rust_decimal = ["dep:rust_decimal", "rust_decimal/maths"]
@@ -66,7 +66,7 @@ whoami = { version = "1.2.1", default-features = false }
 serde = { version = "1.0.144", features = ["derive"] }
 serde_json = { version = "1.0.85", features = ["raw_value"] }
 
-[dependencies.sqlx-core]
+[dependencies.sqlx-etorreborre-core]
 workspace = true
 # We use JSON in the driver implementation itself so there's no reason not to enable it here.
 features = ["json"]

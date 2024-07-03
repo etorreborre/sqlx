@@ -178,8 +178,14 @@ mod fake_sqlx {
     pub use sqlx_mysql as mysql;
 
     #[cfg(feature = "postgres")]
-    pub use sqlx_postgres as postgres;
+    pub use sqlx_etorreborre_postgres as postgres;
 
     #[cfg(feature = "sqlite")]
-    pub use sqlx_sqlite as sqlite;
+    pub use sqlx_etorreborre_sqlite as sqlite;
 }
+
+#[cfg(feature = "postgres")]
+extern crate sqlx_etorreborre_postgres as sqlx_postgres;
+
+#[cfg(feature = "sqlite")]
+extern crate sqlx_etorreborre_sqlite as sqlx_sqlite;

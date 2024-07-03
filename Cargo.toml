@@ -23,7 +23,7 @@ members = [
 ]
 
 [workspace.package]
-version = "0.7.5"
+version = "0.7.9"
 license = "MIT OR Apache-2.0"
 edition = "2021"
 repository = "https://github.com/launchbadge/sqlx"
@@ -54,7 +54,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 [features]
 default = ["any", "macros", "migrate", "json"]
 macros = ["sqlx-macros"]
-migrate = ["sqlx-core/migrate", "sqlx-macros?/migrate", "sqlx-mysql?/migrate", "sqlx-postgres?/migrate", "sqlx-sqlite?/migrate"]
+migrate = ["sqlx-etorreborre-core/migrate", "sqlx-macros?/migrate", "sqlx-mysql?/migrate", "sqlx-etorreborre-postgres?/migrate", "sqlx-etorreborre-sqlite?/migrate"]
 
 # intended mainly for CI and docs
 all-databases = ["mysql", "sqlite", "postgres", "any"]
@@ -71,12 +71,12 @@ _unstable-all-types = [
 ]
 
 # Base runtime features without TLS
-runtime-async-std = ["_rt-async-std", "sqlx-core/_rt-async-std", "sqlx-macros?/_rt-async-std"]
-runtime-tokio = ["_rt-tokio", "sqlx-core/_rt-tokio", "sqlx-macros?/_rt-tokio"]
+runtime-async-std = ["_rt-async-std", "sqlx-etorreborre-core/_rt-async-std", "sqlx-macros?/_rt-async-std"]
+runtime-tokio = ["_rt-tokio", "sqlx-etorreborre-core/_rt-tokio", "sqlx-macros?/_rt-tokio"]
 
 # TLS features
-tls-native-tls = ["sqlx-core/_tls-native-tls", "sqlx-macros?/_tls-native-tls"]
-tls-rustls = ["sqlx-core/_tls-rustls", "sqlx-macros?/_tls-rustls"]
+tls-native-tls = ["sqlx-etorreborre-core/_tls-native-tls", "sqlx-macros?/_tls-native-tls"]
+tls-rustls = ["sqlx-etorreborre-core/_tls-rustls", "sqlx-macros?/_tls-rustls"]
 
 # No-op feature used by the workflows to compile without TLS enabled. Not meant for general use.
 tls-none = []
@@ -94,37 +94,37 @@ _rt-async-std = []
 _rt-tokio = []
 
 # database
-any = ["sqlx-core/any", "sqlx-mysql?/any", "sqlx-postgres?/any", "sqlx-sqlite?/any"]
-postgres = ["sqlx-postgres", "sqlx-macros?/postgres"]
+any = ["sqlx-etorreborre-core/any", "sqlx-mysql?/any", "sqlx-etorreborre-postgres?/any", "sqlx-etorreborre-sqlite?/any"]
+postgres = ["sqlx-etorreborre-postgres", "sqlx-macros?/postgres"]
 mysql = ["sqlx-mysql", "sqlx-macros?/mysql"]
-sqlite = ["sqlx-sqlite", "sqlx-macros?/sqlite"]
+sqlite = ["sqlx-etorreborre-sqlite", "sqlx-macros?/sqlite"]
 
 # types
-json = ["sqlx-macros?/json", "sqlx-mysql?/json", "sqlx-postgres?/json", "sqlx-sqlite?/json"]
+json = ["sqlx-macros?/json", "sqlx-mysql?/json", "sqlx-etorreborre-postgres?/json", "sqlx-etorreborre-sqlite?/json"]
 
-bigdecimal = ["sqlx-core/bigdecimal", "sqlx-macros?/bigdecimal", "sqlx-mysql?/bigdecimal", "sqlx-postgres?/bigdecimal"]
-bit-vec = ["sqlx-core/bit-vec", "sqlx-macros?/bit-vec", "sqlx-postgres?/bit-vec"]
-chrono = ["sqlx-core/chrono", "sqlx-macros?/chrono", "sqlx-mysql?/chrono", "sqlx-postgres?/chrono", "sqlx-sqlite?/chrono"]
-ipnetwork = ["sqlx-core/ipnetwork", "sqlx-macros?/ipnetwork", "sqlx-postgres?/ipnetwork"]
-mac_address = ["sqlx-core/mac_address", "sqlx-macros?/mac_address", "sqlx-postgres?/mac_address"]
-rust_decimal = ["sqlx-core/rust_decimal", "sqlx-macros?/rust_decimal", "sqlx-mysql?/rust_decimal", "sqlx-postgres?/rust_decimal"]
-time = ["sqlx-core/time", "sqlx-macros?/time", "sqlx-mysql?/time", "sqlx-postgres?/time", "sqlx-sqlite?/time"]
-uuid = ["sqlx-core/uuid", "sqlx-macros?/uuid", "sqlx-mysql?/uuid", "sqlx-postgres?/uuid", "sqlx-sqlite?/uuid"]
-regexp = ["sqlx-sqlite?/regexp"]
+bigdecimal = ["sqlx-etorreborre-core/bigdecimal", "sqlx-macros?/bigdecimal", "sqlx-mysql?/bigdecimal", "sqlx-etorreborre-postgres?/bigdecimal"]
+bit-vec = ["sqlx-etorreborre-core/bit-vec", "sqlx-macros?/bit-vec", "sqlx-etorreborre-postgres?/bit-vec"]
+chrono = ["sqlx-etorreborre-core/chrono", "sqlx-macros?/chrono", "sqlx-mysql?/chrono", "sqlx-etorreborre-postgres?/chrono", "sqlx-etorreborre-sqlite?/chrono"]
+ipnetwork = ["sqlx-etorreborre-core/ipnetwork", "sqlx-macros?/ipnetwork", "sqlx-etorreborre-postgres?/ipnetwork"]
+mac_address = ["sqlx-etorreborre-core/mac_address", "sqlx-macros?/mac_address", "sqlx-etorreborre-postgres?/mac_address"]
+rust_decimal = ["sqlx-etorreborre-core/rust_decimal", "sqlx-macros?/rust_decimal", "sqlx-mysql?/rust_decimal", "sqlx-etorreborre-postgres?/rust_decimal"]
+time = ["sqlx-etorreborre-core/time", "sqlx-macros?/time", "sqlx-mysql?/time", "sqlx-etorreborre-postgres?/time", "sqlx-etorreborre-sqlite?/time"]
+uuid = ["sqlx-etorreborre-core/uuid", "sqlx-macros?/uuid", "sqlx-mysql?/uuid", "sqlx-etorreborre-postgres?/uuid", "sqlx-etorreborre-sqlite?/uuid"]
+regexp = ["sqlx-etorreborre-sqlite?/regexp"]
 
 [workspace.dependencies]
 # Core Crates
-sqlx-core = { version = "=0.7.4", path = "sqlx-core" }
-sqlx-macros-core = { version = "=0.7.4", path = "sqlx-macros-core" }
-sqlx-macros = { version = "=0.7.4", path = "sqlx-macros" }
+sqlx-etorreborre-core = { version = ">=0.7.7", path = "sqlx-core" }
+sqlx-macros-core = { version = ">=0.7.4", path = "sqlx-macros-core" }
+sqlx-macros = { version = ">=0.7.4", path = "sqlx-macros" }
 
 # Driver crates
-sqlx-mysql = { version = "=0.7.4", path = "sqlx-mysql" }
-sqlx-postgres = { version = "=0.7.4", path = "sqlx-postgres" }
-sqlx-sqlite = { version = "=0.7.4", path = "sqlx-sqlite" }
+sqlx-mysql = { version = ">=0.7.4", path = "sqlx-mysql" }
+sqlx-etorreborre-postgres = { version = ">=0.7.7", path = "sqlx-postgres" }
+sqlx-etorreborre-sqlite = { version = ">=0.7.7", path = "sqlx-sqlite" }
 
 # Facade crate (for reference from sqlx-cli)
-sqlx = { version = "=0.7.4", path = ".", default-features = false }
+sqlx-etorreborre = { version = ">=0.7.7", path = ".", default-features = false }
 
 # Common type integrations shared by multiple driver crates.
 # These are optional unless enabled in a workspace crate.
@@ -150,12 +150,12 @@ features = ["time", "net", "sync", "fs", "io-util", "rt"]
 default-features = false
 
 [dependencies]
-sqlx-core = { workspace = true, features = ["offline", "migrate"] }
+sqlx-etorreborre-core = { workspace = true, features = ["offline", "migrate"] }
 sqlx-macros = { workspace = true, optional = true }
 
 sqlx-mysql = { workspace = true, optional = true }
-sqlx-postgres = { workspace = true, optional = true }
-sqlx-sqlite = { workspace = true, optional = true }
+sqlx-etorreborre-postgres = { workspace = true, optional = true }
+sqlx-etorreborre-sqlite = { workspace = true, optional = true }
 
 [dev-dependencies]
 anyhow = "1.0.52"

@@ -1,7 +1,7 @@
 //! **MySQL** database driver.
 
 #[macro_use]
-extern crate sqlx_core;
+extern crate sqlx_etorreborre_core as sqlx_core;
 
 use crate::executor::Executor;
 

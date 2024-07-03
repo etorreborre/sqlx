@@ -24,7 +24,7 @@ impl AnyValueKind<'_> {
     fn type_info(&self) -> AnyTypeInfo {
         AnyTypeInfo {
             kind: match self {
-                AnyValueKind::Null(k) => AnyTypeInfoKind::Null,
+                AnyValueKind::Null(_k) => AnyTypeInfoKind::Null,
                 AnyValueKind::Bool(_) => AnyTypeInfoKind::Bool,
                 AnyValueKind::SmallInt(_) => AnyTypeInfoKind::SmallInt,
                 AnyValueKind::Integer(_) => AnyTypeInfoKind::Integer,
